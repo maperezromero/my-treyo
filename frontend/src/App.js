@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      <div className="main-panel" id='panel'>
+      <div className="main-panel">
         HOLA
       </div>
     </div>

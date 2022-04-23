@@ -6,7 +6,7 @@ async function getTasks(){
         const {data} = await axios.get('http://localhost:3000/');
 
         list = data?.data;
-        return data;
+        return list;
         
     } catch (error) {
         console.log(error);
