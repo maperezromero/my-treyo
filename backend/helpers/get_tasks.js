@@ -19,7 +19,7 @@ async function getTasks( req, res, next) {
 
         const output = await tasks.find({}).toArray();
 
-        console.log(output);
+        //console.log(output);
         res.send({
             status: 'ok',
             data: output,
