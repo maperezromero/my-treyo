@@ -1,0 +1,7 @@
+{
+    "id": "unique_id",
+    "name": "Task name",
+    "notes": "Notes",
+    "status": "status",
+    "due": "date"
+}
