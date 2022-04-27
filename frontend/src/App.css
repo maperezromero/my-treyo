@@ -1,7 +1,7 @@
 
 
 body{
-    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+    background-image: linear-gradient(to right, #3D5A80, #98C1D9);
 }
 .App-header{
     min-height: 10vh;
@@ -14,13 +14,16 @@ body{
 .column{
     min-width: 25vw;
     min-height: 33vh;
-    background-color:darkgray;
+    background-color:#293241;
     border-radius: 5px;
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    
+    position: relative;
+}
+.column-type{
+    color: aliceblue;
 }
 .task{
     background-color: floralwhite;
@@ -31,11 +34,16 @@ body{
     background-color: gray;
 }
 .add-task{
-    background-color: darkgray;
+    background-color: #EE6C4D;
+    color: #E0FBFC;
     border: none;
     width: 80%;
-    text-align: start;
+    text-align: center;
     border-radius: 2px;
+    justify-self:baseline;
+    position: absolute;
+    bottom: 16px;
+    
     
 }
 .add-task:hover{
@@ -76,4 +84,16 @@ body{
     position: absolute;
     right: 2%;
     top: 2%;
+}
+.tasks-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 50px;
+}
+.task-element{
+    width: 90%;
+    text-align: start;
+    color: aliceblue;
 }
