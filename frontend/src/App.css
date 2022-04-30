@@ -96,4 +96,16 @@ body{
     width: 90%;
     text-align: start;
     color: aliceblue;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.task-element:hover{
+    background-color:#3D5A80 ;
+    
+}
+.button-container{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
 }

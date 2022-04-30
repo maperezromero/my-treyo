@@ -17,15 +17,37 @@ function App() {
       status: '',
       newTask:true,
       tasks:data? data:[],
+      idTask: '',
+      taskSelect: {
+        name:'',
+        notes:'',
+        status:'',
+      }
     }
   )
   
   function handleAddTask(status){
     //e.preventDefault();
     //console.log(status);
-    setParams({...params, status: status, showForm:true});
+    setParams({...params, status: status, showForm:true, newTask:true});
   }
   
+  function handleClickTask(id){
+    //console.log(id);
+
+    let readTask = {};
+    readTask = params.tasks.filter(task => task.id === id );
+    
+        //console.log(readTask[0]);
+        //setParams({...params, taskSelect: readTask[0]});
+        //console.log(readTask);
+        //console.log(readTask[0].name);
+    
+    setParams({...params, showForm:true, newTask:false, idTask:id, taskSelect: readTask[0]})
+  }
+  function startDrag(e){
+    console.log(e.dataTransfer.setData("drag-item", props.dataItem));
+  }
   return (
     <AuthContext.Provider value={{params, setParams}}>
       <div className="App">
@@ -38,7 +60,7 @@ function App() {
             {params.tasks.map((task,i)=>{
               if (task.status === 'Next-Up'){
                 //console.log('test');
-                return <div className="task-element" key={i}>{task.taskName}</div>
+                return <div className="task-element" draggable key={i} onClick={()=>handleClickTask(task.id)} onDragStart={startDrag}>{task.name}</div>
               }else{
                 return null;
               }
@@ -52,7 +74,7 @@ function App() {
               {params.tasks.map((task,i)=>{
                 if (task.status === 'Doing'){
                   //console.log('test');
-                  return <div className="task-element" key={i}>{task.taskName}</div>
+                  return <div className="task-element" draggable key={i} onClick={()=>handleClickTask(task.id)} onDragStart={startDrag}>{task.name}</div>
                 }else{
                   return null;
                 }
@@ -66,7 +88,7 @@ function App() {
               {params.tasks.map((task,i)=>{
                   if (task.status === 'Completed'){
                     //console.log('test');
-                    return <div className="task-element" key={i}>{task.taskName}</div>
+                    return <div className="task-element" draggable key={i} onClick={()=>handleClickTask(task.id)}>{task.name}</div>
                   }else{
                     return null;
                   }
