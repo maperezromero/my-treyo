@@ -19,7 +19,9 @@ function TaskForm( {id = null} ){
     function handleAddTask(){
         const taskName = document.getElementById('task-name').value;
         const notes = document.getElementById('notes').value;
+        const dueDate = document.getElementById('dueDate').value;
         const status = document.getElementById('status').value;
+
 
         if (validator.isEmpty(taskName)) {
             console.log('Should add a task name');
@@ -29,23 +31,28 @@ function TaskForm( {id = null} ){
             id: uuid.v4(),
             name: taskName,
             notes: notes,
+            dueDate: dueDate,
             status: status,
         }
-        console.log(params.tasks);
+        //console.log(params.tasks);
         let tasks = [...params.tasks];
         tasks.push(task)
         window.localStorage.setItem('to-doDB',JSON.stringify(tasks))
         setParams({...params, tasks:tasks, showForm:false})
     }
     function handleChangeName(e){
-        console.log(e.target.value);
-        console.log(params);
+        //console.log(e.target.value);
+        //console.log(params);
         setParams({...params, taskSelect: {...params.taskSelect, name: e.target.value}})
         //setParams({...params, })
 
     }
     function handleChangeNotes(e){
         setParams({...params, taskSelect: {...params.taskSelect, notes: e.target.value}})
+    }
+
+    function handleChangeDueDate(){
+
     }
 
     function handleSaveTask(){
@@ -59,7 +66,7 @@ function TaskForm( {id = null} ){
                 const status = document.getElementById('status').value;
                 if (validator.isEmpty(taskName)) {
                     console.log('Should add a task name');
-                    return;
+                    
                 }
                 return {...task, name:taskName, notes: notes, status: status};
                 
@@ -100,7 +107,7 @@ function TaskForm( {id = null} ){
                 </div>
                 <div className="container-field">
                     <label>Due Date</label>    
-                    <input className="task-due input"></input>
+                    <input className="task-due input" id="dueDate"></input>
     
                 </div>
                 <div className="container-field">
@@ -130,7 +137,7 @@ function TaskForm( {id = null} ){
                 </div>
                 <div className="container-field">
                     <label>Due Date</label>    
-                    <input className="task-due input"></input>
+                    <input className="task-due input" id="dueDate" value={params.taskSelect.dueDate} onChange={handleChangeDueDate}></input>
     
                 </div>
                 <div className="container-field">

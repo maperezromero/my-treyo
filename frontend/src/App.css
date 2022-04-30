@@ -24,6 +24,7 @@ body{
 }
 .column-type{
     color: aliceblue;
+    margin-top: 12px;
 }
 .task{
     background-color: floralwhite;
@@ -43,8 +44,6 @@ body{
     justify-self:baseline;
     position: absolute;
     bottom: 16px;
-    
-    
 }
 .add-task:hover{
     background-color: dimgray;
@@ -91,6 +90,7 @@ body{
     align-items: center;
     width: 90%;
     margin-bottom: 50px;
+    height: 25vh;
 }
 .task-element{
     width: 90%;
