@@ -89,7 +89,8 @@ function TaskForm( {id = null} ){
         setParams({...params, showForm:false})
     }
     function handleChangeStatus(e){
-        setParams({...params, status:e.target.value})
+       
+        setParams({...params, taskSelect: {...params.taskSelect, status: e.target.value}})
     }
     
     if (params.newTask){

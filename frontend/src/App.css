@@ -15,13 +15,15 @@ body{
 }
 .main-panel{
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
+    justify-content: center;
+    gap: 12px;
 }
 .column{
-    min-width: 15vw;
-    max-width: 25vw;
-    min-height: 33vh;
+    width: 80%;
+    height: auto;
     background-color:#293241;
     border-radius: 5px;
     text-align: center;
@@ -58,7 +60,7 @@ body{
 }
 .task-form{
     background-color: hsl(0, 0%, 91%);
-    height: 50vh;
+    height: 60vh;
     width: 50vh;
     position: absolute; 
     border-radius: 10px;
@@ -98,7 +100,7 @@ body{
     align-items: center;
     width: 90%;
     margin-bottom: 50px;
-    height: 25vh;
+    height: auto;
 }
 .task-element{
     width: 90%;
@@ -116,4 +118,31 @@ body{
     display: flex;
     width: 90%;
     justify-content: space-around;
+}
+
+/*DESKTOPS & TABLETS SCREEN*/
+@media screen and (min-width: 768px){
+    .main-panel{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .task-form{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .add-task{
+        position: relative;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .tasks-container{
+        height: auto;
+        min-height: 25vh;
+    }
+    .column{
+        max-width: 20%;
+    }
 }
