@@ -116,6 +116,7 @@ function App() {
     <AuthContext.Provider value={{params, setParams}}>
       <div className="App">
         <header className="App-header">
+          <h1>My To-Do</h1>
         </header>
         <div className="main-panel">
           <div className="column" id="next-up">

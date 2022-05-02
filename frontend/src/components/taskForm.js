@@ -107,8 +107,7 @@ function TaskForm( {id = null} ){
                 </div>
                 <div className="container-field">
                     <label>Due Date</label>    
-                    <input className="task-due input" id="dueDate"></input>
-    
+                    <input className="task-due input" id="dueDate" type="date" placeholder=''></input>
                 </div>
                 <div className="container-field">
                     <label>Status</label>    
@@ -137,7 +136,7 @@ function TaskForm( {id = null} ){
                 </div>
                 <div className="container-field">
                     <label>Due Date</label>    
-                    <input className="task-due input" id="dueDate" value={params.taskSelect.dueDate} onChange={handleChangeDueDate}></input>
+                    <input className="task-due input" id="dueDate" type="date" value={params.taskSelect.dueDate} onChange={handleChangeDueDate}></input>
     
                 </div>
                 <div className="container-field">
